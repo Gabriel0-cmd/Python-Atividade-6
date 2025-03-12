@@ -1,0 +1,32 @@
+def avaliador_temperatura():
+    # Entradas das temperaturas
+    temp_maxima = input("Digite a temperatura máxima: ")
+    temp_minima = input("Digite a temperatura mínima: ")
+
+    # Verificar se as entradas são números válidos
+    try:
+        temp_maxima = float(temp_maxima)
+        temp_minima = float(temp_minima)
+    except ValueError:
+        print("Temperatura inválida. Digite um número válido.")
+        return
+
+    # Calcular média e variação
+    media = (temp_maxima + temp_minima) / 2
+    variacao = temp_maxima - temp_minima
+
+    print(f"Média das temperaturas: {media}")
+    print(f"Variação entre as temperaturas: {variacao}")
+
+    # Solicitar um número para soma dos dígitos
+    numero = input("Digite um número para calcular a soma dos dígitos: ")
+
+    # Verificar se o número é válido
+    if not numero.replace('.', '', 1).isdigit():
+        print("Número inválido.")
+    else:
+        soma = sum(int(digito) for digito in numero if digito.isdigit())
+        print(f"Soma dos dígitos do número: {soma}")
+
+# Chamar a função
+avaliador_temperatura()
